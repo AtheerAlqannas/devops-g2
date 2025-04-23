@@ -1,0 +1,35 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "description": "Frontend UI",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest --reporters=default --reporters=jest-junit",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:junit": "jest --reporters=default --reporters=jest-junit"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-junit": "^16.0.0",
+    "jquery": "^3.5.1"
+  },
+  "jest-junit": {
+    "outputDirectory": "test-results",
+    "outputName": "test-results.xml"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFiles": [
+      "./jest.setup.js"
+    ],
+    "testEnvironmentOptions": {
+      "url": "http://localhost"
+    }
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
